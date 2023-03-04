@@ -1,0 +1,76 @@
+{
+  "plugins_path": "./src/common/robots/plugins",
+  "robotTypes": [
+    "qq",
+    "wechat"
+  ],
+  "host": "http://192.168.0.111",
+  "port": 3000,
+  "qq": {
+    "qq": 3596709273,
+    "adapterInUse": "http",
+    "verbose": true,
+    "adapters": {
+      "http": {
+        "configs": {
+          "verifyKey": "INITKEYwHDm5pMc",
+          "host": "139.186.203.142",
+          "port": 8080
+        }
+      },
+      "ws": {
+        "configs": {
+          "verifyKey": "INITKEYwHDm5pMc",
+          "host": "139.186.203.142",
+          "port": 8080
+        }
+      }
+    },
+    "users": {
+      "1247959612": {
+        "plugins": []
+      },
+      "common": {
+        "plugins": [
+          "userHelp",
+          "card",
+          "weather",
+          "fav",
+          "notify",
+          "password",
+          "todo",
+          "hisToday",
+          "chatGPT"
+        ]
+      },
+      "max_queue_size": 8
+    },
+    "groups": {
+      "726839878": {
+        "plugins": []
+      },
+      "214861302": {
+        "plugins": []
+      },
+      "common": {
+        "plugins": []
+      }
+    },
+    "global": {
+      "plugins": []
+    }
+  },
+  "chatGPT": {
+    "max_turns": 3,
+    "init_usage": 10,
+    "api_key": "**",
+    "organization": "**",
+    "model": {
+      "text": "text-davinci-003"
+    },
+    "img_size": "512x512"
+  },
+  "weather": {
+    "gaode_keys": "e18f00faf2d7f9c16d680f2adaf9b5fd"
+  }
+}
