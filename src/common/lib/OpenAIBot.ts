@@ -27,14 +27,13 @@ export default class OpenAIBot {
                 max_tokens: 2048,
                 user: userId
             });
-            console.log(completion.data);
             return {
                 data: completion.data.choices[0].text,
                 success: true
             };
           } catch (error) {
+            console.log(error)
             if (error.response) {
-                console.log(error)
                 return {
                     data: "出错了，缓口气吧！",
                     success: false

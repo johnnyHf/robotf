@@ -63,8 +63,8 @@
   "chatGPT": {
     "max_turns": 3,
     "init_usage": 10,
-    "api_key": "**",
-    "organization": "**",
+    "api_key": "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",
+    "organization": "org-LrjPImPQ9xMwg9aJ8PFhPqIy",
     "model": {
       "text": "text-davinci-003"
     },

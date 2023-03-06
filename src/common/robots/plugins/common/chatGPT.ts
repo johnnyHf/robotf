@@ -66,7 +66,7 @@ export default class ChatGPTPlugin extends Plugin {
                 let response = null;
                 if (cmds[1] === 'img' || cmds[1] === 'm') {
                     const chatMsg = cmds.slice(2, cmds.length).join(' ');
-                    friend.addMsg(chatMsg, chatMessage.messageChain.sourceId, MSG_TYPE);
+                    // friend.addMsg(chatMsg, chatMessage.messageChain.sourceId, MSG_TYPE);
                     response = await OpenAIBot.createImage(chatMsg, sender.id + '');
                     await downloadFile(response.data, async function (fileStream) {
                         const uploadRes = await app.httpApi.uploadImage('friend', fileStream);
@@ -75,7 +75,7 @@ export default class ChatGPTPlugin extends Plugin {
                     });
                 } else {
                     const chatMsg = cmds.slice(1, cmds.length).join(' ');
-                    friend.addMsg(chatMsg, chatMessage.messageChain.sourceId, MSG_TYPE);
+                    // friend.addMsg(chatMsg, chatMessage.messageChain.sourceId, MSG_TYPE);
                     response = await OpenAIBot.createComplete(chatMsg, sender.id + '');
                     const chain = MessageChain.from([Plain(response.data.trim())]);
                     await chat.send(chain);
