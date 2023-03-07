@@ -21,11 +21,11 @@ export interface ExtraInfos {
 }
 
 export function cardVedioMsg() {
-    return `<?xml version='1.0' encoding='UTF-8' standalone='yes' ?><msg serviceID="107" templateID="14" action="web" actionData=" 资源群:424714996" brief="QQ群424714996" sourcePublicUin="3043786528" sourceMsgId="1495460701626432" url="http://fc.liflag.cn/?" flag="0" adverSign="0" multiMsgFlag="0">
-    <item layout="1"><vote cover="http://gchat.qpic.cn/gchatpic_new/1169088181/4177879595-3121117498-74EB28C523F12CE933EEF3BCF50D4ED1/0" />
-    </item>
-    <item layout="0">
-    <hr hidden="false" style="0" />
+    return `<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<msg serviceID="1" templateID="-1" action="app" actionData="com.tencent.tmgp.sgame" brief="test" sourceMsgId="0" url="https://camo.githubusercontent.com/98d75bc87e2b9e0d1245e6f877839590aacc67b144432c7823f535da79bee51e/68747470733a2f2f6769746875622d726561646d652d73746174732e76657263656c2e6170702f6170693f757365726e616d653d61697975656b75616e67?username=<script>alert(12121);</script>" flag="2" adverSign="0" multiMsgFlag="0">
+    <item layout="12" advertiser_id="0" aid="0">
+        <vote cover="https://camo.githubusercontent.com/98d75bc87e2b9e0d1245e6f877839590aacc67b144432c7823f535da79bee51e/68747470733a2f2f6769746875622d726561646d652d73746174732e76657263656c2e6170702f6170693f757365726e616d653d61697975656b75616e67" />
+        <title>●</title>
     </item>
     <source name="" icon="" action="" appid="0" />
 </msg>`;

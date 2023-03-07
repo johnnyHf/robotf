@@ -42,7 +42,7 @@ export default class CardPlugin extends Plugin {
                 source: source
             });
             if (cmds[0] === 'carp') {
-                await robot.api.sendFriendMessage(receiver, MessageChain.from([Xml(xmlCard)]));
+                await robot.api.sendFriendMessage(receiver, MessageChain.from([Json(cardVedioMsg())]));
             } else if (cmds[0] === 'carg') {
                 await robot.api.sendGroupMessage(receiver, MessageChain.from([Xml(xmlCard)]));
             }

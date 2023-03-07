@@ -18,7 +18,6 @@ String.prototype.signMix= function() {
 }
 
 const qqRobot = new QQRobot(require('./common/config/setting.json')[SourceEnum.QQ]);
-
 export function init () {
     loadAllPlugins();
 }

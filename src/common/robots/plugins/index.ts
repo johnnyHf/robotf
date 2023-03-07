@@ -50,6 +50,7 @@ export function reloadAll() {
 }
 
 export function loadAllPlugins() {
+    console.log(1111111)
     const pluginDirPath = path.join(__dirname, '../', setting.plugins_path);
     const files = getFileList(pluginDirPath);
     L('加载所有插件...');

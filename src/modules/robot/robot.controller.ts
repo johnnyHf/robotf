@@ -46,6 +46,9 @@ export class RobotController {
     }
 
     buildHelpMsg(sendId) {
+        if (!sendId) {
+            return "";
+        }
         const chain = [];
         const friend = Friend.getById(SourceEnum.QQ, sendId)
         if (!friend) {
