@@ -1,14 +1,14 @@
-import { Client, segment } from 'oicq';
+import Wechat from 'wechat4u';
 import { Friend } from "../../../../../modules/friend/entities/friend.entity";
 import { SourceEnum } from "../../../../../modules/friend/enums/sourceEnum";
 import { btnListCardMsg } from "../../../../utils/qqUtil";
 import {getPlugin, Plugin} from "../../index";
 let setting = require('../../../../config/setting.json');
 
-export default class UserHelpPlugin extends Plugin {
+export default class WechatUserHelpPlugin extends Plugin {
     constructor() {
         super({
-            name: "userHelp",
+            name: "wechatUserHelp",
             zhName: "📫 帮助提示",
             html: 'default/help.hbs',
             desc: "📫 用户消息帮助提示插件"
@@ -16,11 +16,13 @@ export default class UserHelpPlugin extends Plugin {
     }
 
     // @ts-ignore
-    async exec(robot: Client, chatMsg) {
-        const sendId = chatMsg.sender.id;
-        const cmd = chatMsg.messageChain.toDisplayString();
+    async exec(robot: Wechat, chatMsg) {
+        const sendId = chatMsg.FromUserName;
+        const cmd = chatMsg.Content;
+        console.log('userhelp')
+        console.log(chatMsg)
         if (['帮助', '?', '？', '功能', '示例'].includes(cmd)) {
-            const plugins = Friend.getById(SourceEnum.QQ, sendId).getPlugins();
+            const plugins = Friend.getById(SourceEnum.Wechat, sendId).getPlugins();
             const btns = [];
             const extraInfos = {
                 title: '📫 功能列表:',
@@ -39,8 +41,9 @@ export default class UserHelpPlugin extends Plugin {
                     })
                 }
             }
+            console.log(sendId)
             const card = btnListCardMsg(btns, extraInfos);
-            await robot.sendPrivateMsg(sendId, segment.xml(card));
+            await robot.sendMsg(card, sendId);
         }
     }
 

@@ -1,6 +1,6 @@
 
 import {getFileList} from '../../utils/fileUtil';
-import {MessageChain, Plain} from "miraipie";
+import {Client, segment} from "oicq";
 const path = require('path');
 const L = require('nirvana-logger')('plugins');
 
@@ -50,7 +50,6 @@ export function reloadAll() {
 }
 
 export function loadAllPlugins() {
-    console.log(1111111)
     const pluginDirPath = path.join(__dirname, '../', setting.plugins_path);
     const files = getFileList(pluginDirPath);
     L('加载所有插件...');
@@ -100,7 +99,7 @@ async function loadPlugin(pluginDirPath, file) {
  * @param robot
  * @param chatMsg
  */
-export function runPlugins(plugins, robot, chatMsg) {
+export function runPlugins(plugins, robot: Client, chatMsg) {
     if (!plugins || plugins.length == 0) {
         return;
     }
@@ -114,7 +113,7 @@ export function runPlugins(plugins, robot, chatMsg) {
             plugin.exec(robot, chatMsg);
         } catch (e) {
             L(e)
-            robot.api.sendFriendMessage(chatMsg.sender.id, MessageChain.from([Plain(`出错了，缓口气吧。`)]), chatMsg.messageId);
+            robot.sendPrivateMsg(chatMsg.from_id, [`出错了，缓口气吧。`]);
         }
     }
 }

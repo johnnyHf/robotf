@@ -6,8 +6,7 @@
   ],
   "host": "http://192.168.0.111",
   "port": 3000,
-  "qq": {
-    "qq": 3596709273,
+  "mirai": {
     "adapterInUse": "http",
     "verbose": true,
     "adapters": {
@@ -25,22 +24,27 @@
           "port": 8080
         }
       }
+    }
+  },
+  "qq": {
+    "accounts": [{
+      "id": 2125614196,
+      "pwd": "**HFhf0215128178"
+    },{
+      "id": 1614467328,
+      "pwd": "hfhf0215128178"
     },
+    {
+      "id": 3596709273,
+      "pwd": "**HFhf0215128178"
+    }],
     "users": {
       "1247959612": {
         "plugins": []
       },
       "common": {
         "plugins": [
-          "userHelp",
-          "card",
-          "weather",
-          "fav",
-          "notify",
-          "password",
-          "todo",
-          "hisToday",
-          "chatGPT"
+          "userHelp"
         ]
       },
       "max_queue_size": 8
@@ -58,6 +62,24 @@
     },
     "global": {
       "plugins": []
+    }
+  },
+  "wechat": {
+    "users": {
+      "common": {
+        "plugins": [
+          "wechatUserHelp"
+        ]
+      },
+      "max_queue_size": 8
+    },
+    "groups": {
+      "common": {
+        "plugins": []
+      }
+    },
+    "global": {
+      "plugins": ["wechatUserHelp"]
     }
   },
   "chatGPT": {

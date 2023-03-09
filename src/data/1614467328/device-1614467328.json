@@ -1,0 +1,18 @@
+{
+  "--begin--": "该设备由账号作为seed固定生成，账号不变则永远相同",
+  "product": "MRS4S",
+  "device": "HIM188MOE",
+  "board": "MIRAI-YYDS",
+  "brand": "OICQX",
+  "model": "Konata 2020",
+  "wifi_ssid": "TP-LINK-603ad100",
+  "bootloader": "U-boot",
+  "android_id": "OICQX.37613148.531",
+  "boot_id": "92ed9435-b102-b525-2ca8-7319c05f2a29",
+  "proc_version": "Linux version 4.19.71-45314 (konata@takayama.github.com)",
+  "mac_address": "00:50:B5:25:2C:A8",
+  "ip_address": "10.0.115.25",
+  "imei": "352463038545921",
+  "incremental": 3227462185,
+  "--end--": "修改后可能需要重新验证设备"
+}

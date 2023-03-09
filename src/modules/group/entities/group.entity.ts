@@ -30,7 +30,8 @@ export class Group {
     plugins : string[];
 
     constructor(options: GroupOptions) {
-        Object.assign(this, options);
+        this.id = options.id;
+        this.type = options.type;
         this.init();
         return this;
     }
@@ -64,9 +65,7 @@ export class Group {
             const typeGroupPool = Group.groupsPool[type];
             for (let userId in typeGroupPool) {
                 const group = Group.getById(type, userId);
-                for (let k in group) {
-                    delete group[k];
-                }
+                delete group['plugins'];
                 group.loadPlugins();
             }
         }

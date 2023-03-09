@@ -3,7 +3,6 @@ import {getPlugin, reloadAll} from "../../common/robots/plugins";
 import {Friend} from "../friend/entities/friend.entity";
 import {ALL_PLUGINS} from "../../common/robots/plugins";
 import {FriendChat, MessageChain, Plain} from "miraipie";
-import {getClientIp} from "../../common/utils/ipUtil";
 import {SourceEnum} from "../friend/enums/sourceEnum";
 @Controller()
 export class RobotController {

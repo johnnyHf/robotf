@@ -15,7 +15,6 @@ export class ResponseInterceptor implements NestInterceptor {
     ): import('rxjs').Observable<any> | Promise<import('rxjs').Observable<any>> {
         return next.handle().pipe(
             map(content => {
-                console.log(content)
                 let data = {};
                 let code = RCode.OK;
                 let msg = null;

@@ -31,7 +31,8 @@ export class Friend {
     plugins : string[];
 
     constructor(options: FriendOptions) {
-        Object.assign(this, options);
+        this.id = options.id;
+        this.type = options.type;
         this.init();
         return this;
     }
@@ -65,9 +66,7 @@ export class Friend {
             const typeFriendPool = Friend.friendsPool[type];
             for (let userId in typeFriendPool) {
                 const friend = Friend.getById(type, userId);
-                for (let k in friend) {
-                    delete friend[k];
-                }
+                delete friend['plugins'];
                 friend.loadPlugins();
             }
         }
